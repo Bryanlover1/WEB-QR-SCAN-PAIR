@@ -28,13 +28,13 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function STAR_MD_QR_CODE() {
+	async function BRYAN_MD_QR_CODE() {
 		const {
 			state,
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let Qr_Code_By_Excel_Xcelsama = Excel_Xcelsama({
+			let Qr_Code_By_Bryan_Tech = Excel_Xcelsama({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
 				browser: Browsers.macOS("Desktop"),
 			});
 
-			Qr_Code_By_Maher_Zubair.ev.on('creds.update', saveCreds)
-			Qr_Code_By_Maher_Zubair.ev.on("connection.update", async (s) => {
+			Qr_Code_By_Bryan_Tech.ev.on('creds.update', saveCreds)
+			Qr_Code_By_Bryan_Tech.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
@@ -56,14 +56,14 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-				   let session = await Qr_Code_By_Excel_Xcelsama.sendMessage(Qr_Code_By_Excel_Xcelsama.user.id, { text: 'STAR-MD;;;' + b64data });
+				   let session = await Qr_code_By_Bryan_Tech.sendMessage(Qr_Code_By_Bryan_Tech.user.id, { text: 'STAR-MD;;;' + b64data });
 	
-				   let STAR_MD_TEXT = `
-*_Qr Code By Excel_*
-*_Made With HTML_*
+				   let Bryan_MD_TEXT = `
+*_Qr Code By Bryan Tech_*
+*_Made With Ice ❄️_*
 	
 _Don't Forget To Give Star To My Repo_`
-	 await Qr_Code_By_Excel_Xcelsama.sendMessage(Qr_Code_By_Excel_Xcelsama.user.id,{text:STAR_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_Bryan_Tech.sendMessage(Qr_Code_By_Bryan_Tech.user.id,{text:STAR_MD_TEXT},{quoted:session})
 
 
 
@@ -72,7 +72,7 @@ _Don't Forget To Give Star To My Repo_`
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					STAR_MD_QR_CODE();
+					BRYAN_MD_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -85,6 +85,6 @@ _Don't Forget To Give Star To My Repo_`
 			await removeFile("temp/" + id);
 		}
 	}
-	return await STAR_MD_QR_CODE()
+	return await BRYAN_MD_QR_CODE()
 });
 module.exports = router
