@@ -20,13 +20,13 @@ function removeFile(FilePath){
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-        async function STAR_MD_PAIR_CODE() {
+        async function BRYAN_MD_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_Excel_Xcelsama = Excel_Xcelsama({
+            let Pair_Code_By_BRYAN_TECH = Excel_Xcelsama({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -38,13 +38,13 @@ router.get('/', async (req, res) => {
              if(!Pair_Code_By_Excel_Xcelsama.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_Excel_Xcelsama.requestPairingCode(num)
+                            const code = await Pair_Code_By_BRYAN_TECH.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Code_By_Excel_Xcelsama.ev.on('creds.update', saveCreds)
-            Pair_Code_By_Excel_Xcelsama.ev.on("connection.update", async (s) => {
+            Pair_Code_By_BRYAN_TECH.ev.on('creds.update', saveCreds)
+            Pair_Code_By_BRYAN_TECH.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -56,35 +56,32 @@ router.get('/', async (req, res) => {
                let b64data = Buffer.from(data).toString('base64');
                let session = await Pair_Code_By_Excel.sendMessage(Pair_Code_By_Excel.user.id, { text: '' + b64data });
 
-               let STAR_MD_TEXT = `
-*_Pair Code Connected by Excel_*
-*_Made With HTML📡_*
+               let BRYAN_MD_TEXT = `
+*_Pair Code Connected by Bryan_*
+*_Made With ICE❄️_*
 ______________________________________
 ╔════◇
-║ *『 WOW YOU CHOSE STAR-MD』*
+║ *『 WOW YOU CHOSE BRYAN-MD』*
 ║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
 ╚══════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Channel:* _https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m_
-║❒ *Owner:* _https://wa.me/2347045035241_
-║❒ *Repo:* _https://github.com/Xcelsama/STAR-MD-V2_
-║❒ *WaGroup:* _https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK_
-║❒ *WaChannel:* _https://whatsapp.com/channel/0029VaJmfmTDJ6H7CmuBss0o_
-║❒ *Other Repo:* _https://github.com/Xcelsama/STAR-MD_
+║❒ *Owner:* _https://wa.me/233263176982_
+║❒ *Repo:* _https://github.com/Bryanlover1/Bryan-Md_
+║❒ *Other Repo:* _https://github.com/Xcelsama/Bryan-Md_
 ╚══════════════════════╝ 
 _____________________________________
 
 _Don't Forget To Give Star To My Repo_`
- await Pair_Code_By_Excel_Xcelsama.sendMessage(Pair_Code_By_Excel_Xcelsama.user.id,{text:STAR_MD_TEXT},{quoted:session})
+ await Pair_Code_By_Bryan_Tech.sendMessage(Pair_Code_By_Bryan_Tech.user.id,{text:BRYAN_MD_TEXT},{quoted:session})
  
 
         await delay(100);
-        await Pair_Code_By_Excel_Xcelsama.ws.close();
+        await Pair_Code_By_Bryan_Teh.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    STAR_MD_PAIR_CODE();
+                    BRYAN_MD_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -95,6 +92,6 @@ _Don't Forget To Give Star To My Repo_`
          }
         }
     }
-    return await STAR_MD_PAIR_CODE()
+    return await BRYAN_MD_PAIR_CODE()
 });
 module.exports = router
