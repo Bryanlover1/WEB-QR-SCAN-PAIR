@@ -66,9 +66,9 @@ ______________________________________
 ╚══════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Owner:* _https://wa.me/233263176982_
-║❒ *Repo:* _https://github.com/Bryanlover1/Bryan-Md_
-║❒ *Other Repo:* _https://github.com/Xcelsama/Bryan-Md_
+║❒ *Owner:* _https://wa.me/233538733413_
+║❒ *Repo:* _https://github.com/Bryanlover1/KHAOS-XMD_
+║❒ *Other Repo:* _https://github.com/Bryanlover1/Venom-md_
 ╚══════════════════════╝ 
 _____________________________________
 
